@@ -1,4 +1,3 @@
-
 package com.sistgas.controles;
 
 import java.sql.ResultSet;
@@ -10,8 +9,7 @@ public class ManterCaixas {
         ResultSet rs; 
         
         rs = AdaptadorBDSistGas.consultarBanco(sql) ;  
-        return rs;
-        
+        return rs;   
     } 
     
     public static ResultSet getCaixa(String idcaixa) { 
@@ -32,7 +30,6 @@ public class ManterCaixas {
                 ");"; 
         
         regInseridos = AdaptadorBDSistGas.atualizarBanco(insertSQL) ;
-        
         return regInseridos; 
     }  
     
@@ -56,22 +53,11 @@ public class ManterCaixas {
             int regExcluidos = 0; 
 
             String excluirSQL = "DELETE FROM caixa " + 
-
                  " where idcaixa = "+idCaixa+";";
-
 
             regExcluidos = AdaptadorBDSistGas.atualizarBanco(excluirSQL) ;
 
             return regExcluidos; 
         } 
-          
-          
-    
-    
-    
-    
-    
-    
-    
-    
+             
 }
