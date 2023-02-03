@@ -1,7 +1,7 @@
 package com.sistgas.controles;
 
 import com.sistgas.forms.FormSistGas; 
-import com.sistgas.forms;
+
 
 public class SistGas {
 
