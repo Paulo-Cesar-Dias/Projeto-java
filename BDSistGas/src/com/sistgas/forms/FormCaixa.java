@@ -63,6 +63,19 @@ public class FormCaixa extends javax.swing.JInternalFrame {
         btProximo.setEnabled(true); 
         btExcluir.setEnabled(false); 
             
+    } 
+    
+    public void adicionarCaixa(){  
+        int regInseridos = 0; 
+        
+        regInseridos = ManterCaixas.adcionarCaixa(areDescricao.getText()); 
+        
+        System.out.println ("Número de registros inseridos: " +regInseridos); 
+        if(regInseridos == 1){ 
+            JOptionPane.showMessageDialog(this, "Informações do Caixa adicionada com sucesso",
+                    "Mensagem de confirmação", JOptionPane.INFORMATION_MESSAGE);
+        
+        }
     }
 
     @SuppressWarnings("unchecked")
