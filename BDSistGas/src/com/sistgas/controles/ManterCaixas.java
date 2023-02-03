@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 public class ManterCaixas {  
     
     public static ResultSet listarCaixas(){ 
-        string sql= "select * from caixa;"; 
+        String sql= "select * from caixa;"; 
         ResultSet rs; 
         
         rs = AdaptadorBDSistGas.consultarBanco(sql) ;  
