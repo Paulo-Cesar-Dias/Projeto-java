@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException; 
 import javax.swing.JOptionPane;
 
+//agora vai
 public class FormCaixa extends javax.swing.JInternalFrame {
     
     private ResultSet rs = null;
