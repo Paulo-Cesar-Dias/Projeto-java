@@ -31,7 +31,7 @@ public class ManterCaixas {
                 "'" +descricao+ "'" + 
                 ");"; 
         
-        regInseridos = AdaptadorBDSistGas.atualizarBanco(InsertSQL) ;
+        regInseridos = AdaptadorBDSistGas.atualizarBanco(insertSQL) ;
         
         return regInseridos; 
     }  
@@ -43,7 +43,7 @@ public class ManterCaixas {
         String updateSQL = "UPDATE caixa SET " + 
                 
                 "descricao ='" +descricao+ "'" +  
-                " where idcaixa = " idCaixa+";";
+                " where idcaixa = "+idCaixa+";";
                 
         
         regAtualizados = AdaptadorBDSistGas.atualizarBanco(updateSQL) ;
@@ -57,7 +57,7 @@ public class ManterCaixas {
 
             String excluirSQL = "DELETE FROM caixa " + 
 
-                 " where idcaixa = " idCaixa+";";
+                 " where idcaixa = "+idCaixa+";";
 
 
             regExcluidos = AdaptadorBDSistGas.atualizarBanco(excluirSQL) ;
