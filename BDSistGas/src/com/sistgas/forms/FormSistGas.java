@@ -124,6 +124,9 @@ public class FormSistGas extends javax.swing.JFrame {
 
     private void copyMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyMenuItemActionPerformed
         
+        FormFuncionarios formFuncionarios = new FormFuncionarios();
+        desktopPane.add(formFuncionarios, JLayeredPane.POPUP_LAYER);
+        formFuncionarios.setVisible(true);
     }//GEN-LAST:event_copyMenuItemActionPerformed
 
     /**
