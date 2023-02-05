@@ -13,9 +13,9 @@ public class AdaptadorBDSistGas {
     // que vocês colocaram no Administrador ODBC
     private static String url = "jdbc:mysql://" + serverName + "/" + mydatabase;
     // usuário do banco de dados
-    private static String username = "usergas";
+    private static String username = "root";
     // senha para acesso ao banco de dados
-    private static String password = "123";
+    private static String password = "senhafacio123";
     // Conexão ao banco de dados
     private static Connection cnn = null;
     // Driver para conexão ao banco de dados

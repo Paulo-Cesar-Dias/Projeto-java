@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/thall/Projeto-java/BDSistGas/src/com/sistgas/forms/FormCaixa.java</file>
-            <file>file:/C:/Users/thall/Projeto-java/BDSistGas/src/com/sistgas/controles/ManterCaixas.java</file>
-            <file>file:/C:/Users/thall/Projeto-java/BDSistGas/src/com/sistgas/controles/AdaptadorBDSistGas.java</file>
-            <file>file:/C:/Users/thall/Projeto-java/BDSistGas/src/com/sistgas/controles/SistGas.java</file>
-            <file>file:/C:/Users/thall/Projeto-java/BDSistGas/src/com/sistgas/forms/FormSistGas.java</file>
+            <file>file:/C:/Users/paulo/Projeto-java/BDSistGas/src/com/sistgas/controles/ManterCaixas.java</file>
+            <file>file:/C:/Users/paulo/Projeto-java/BDSistGas/src/com/sistgas/forms/FormCaixa.java</file>
+            <file>file:/C:/Users/paulo/Projeto-java/BDSistGas/src/com/sistgas/controles/SistGas.java</file>
+            <file>file:/C:/Users/paulo/Projeto-java/BDSistGas/src/com/sistgas/controles/AdaptadorBDSistGas.java</file>
         </group>
     </open-files>
 </project-private>
