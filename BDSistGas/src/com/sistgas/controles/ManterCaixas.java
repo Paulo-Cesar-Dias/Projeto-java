@@ -12,15 +12,15 @@ public class ManterCaixas {
         return rs;   
     } 
     
-    public static ResultSet getCaixa(String idcaixa) { 
-        String sql = "select * from caixa where idcaixa=" + idcaixa + ";"; 
+    public static ResultSet getCaixa(String id) { 
+        String sql = "select * from caixa where idcaixa=" + id + ";"; 
         ResultSet rs; 
         
         rs = AdaptadorBDSistGas.consultarBanco(sql) ;  
         return rs;  
     } 
     
-    public static int adcionarCaixa(String descricao) { 
+    public static int adicionarCaixa(String descricao) { 
         
         int regInseridos = 0; 
         
@@ -33,14 +33,14 @@ public class ManterCaixas {
         return regInseridos; 
     }  
     
-     public static int atualizarCaixa(String idCaixa, String descricao) { 
+     public static int atualizarCaixa(String id, String descricao) { 
         
         int regAtualizados = 0; 
         
         String updateSQL = "UPDATE caixa SET " + 
                 
                 "descricao ='" +descricao+ "'" +  
-                " where idcaixa = "+idCaixa+";";
+                " where idcaixa = "+id+";";
                 
         
         regAtualizados = AdaptadorBDSistGas.atualizarBanco(updateSQL) ;
@@ -48,16 +48,15 @@ public class ManterCaixas {
         return regAtualizados; 
     }  
      
-          public static int excluirCaixa(String idCaixa, String descricao) { 
+          public static int excluirCaixa(String id, String descricao) { 
         
             int regExcluidos = 0; 
 
             String excluirSQL = "DELETE FROM caixa " + 
-                 " where idcaixa = "+idCaixa+";";
+                 " where idcaixa = "+id+";";
 
             regExcluidos = AdaptadorBDSistGas.atualizarBanco(excluirSQL) ;
 
             return regExcluidos; 
-        } 
-             
+        }        
 }

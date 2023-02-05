@@ -22,12 +22,12 @@ public class FormSistGas extends javax.swing.JFrame {
         cutMenuItem = new javax.swing.JMenuItem();
         copyMenuItem = new javax.swing.JMenuItem();
         pasteMenuItem = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         helpMenu = new javax.swing.JMenu();
         contentMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,6 +70,9 @@ public class FormSistGas extends javax.swing.JFrame {
         pasteMenuItem.setText("Produto");
         editMenu.add(pasteMenuItem);
 
+        jMenuItem2.setText("Cliente");
+        editMenu.add(jMenuItem2);
+
         menuBar.add(editMenu);
 
         helpMenu.setMnemonic('h');
@@ -92,9 +95,6 @@ public class FormSistGas extends javax.swing.JFrame {
 
         menuBar.add(jMenu1);
 
-        jMenu2.setText("Relatorios");
-        menuBar.add(jMenu2);
-
         setJMenuBar(menuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -116,14 +116,14 @@ public class FormSistGas extends javax.swing.JFrame {
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
     private void cutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cutMenuItemActionPerformed
-        
+
         FormCaixa formCaixa = new FormCaixa();
         desktopPane.add(formCaixa, JLayeredPane.POPUP_LAYER);
-        formCaixa.setVisible(true);
+        formCaixa.setVisible(true);        
     }//GEN-LAST:event_cutMenuItemActionPerformed
 
     private void copyMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyMenuItemActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_copyMenuItemActionPerformed
 
     /**
@@ -172,8 +172,8 @@ public class FormSistGas extends javax.swing.JFrame {
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem pasteMenuItem;
     // End of variables declaration//GEN-END:variables

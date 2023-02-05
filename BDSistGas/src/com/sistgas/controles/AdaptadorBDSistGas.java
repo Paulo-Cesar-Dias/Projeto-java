@@ -7,8 +7,8 @@ import java.sql.*;
 
 public class AdaptadorBDSistGas {
 
-    private static String serverName = "localhost";    //caminho do servidor do BD
-    private static String mydatabase = "bdsistemagerenciamentogas";        //nome do seu banco de dados
+    private static String serverName = "localhost"; //caminho do servidor do BD
+    private static String mydatabase = "bdsistemagerenciamentogas"; //nome do seu banco de dados
     // endereço onde está o banco de dados. Lembrem-se que BDClientes é o nome
     // que vocês colocaram no Administrador ODBC
     private static String url = "jdbc:mysql://" + serverName + "/" + mydatabase;

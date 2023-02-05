@@ -1,4 +1,3 @@
-
 package com.sistgas.forms; 
 
 import com.sistgas.controles.ManterCaixas; 
@@ -12,9 +11,7 @@ public class FormCaixa extends javax.swing.JInternalFrame {
     
     public FormCaixa() { 
         super("Formulário Caixas", true,true,true,true);
-        
         initComponents(); 
-        listarCaixas();
     } 
     
     public void listarCaixas() { 
@@ -49,34 +46,9 @@ public class FormCaixa extends javax.swing.JInternalFrame {
         }catch (SQLException e) { 
         e.printStackTrace();
     } 
-    } 
+    }  
     
-    public void limparFormulario() { 
-        
-        tfIdCaixa.setText(""); 
-        taDescricao.setText("");        
-            
-        btSalvar.setEnabled(false); 
-        btAdicionar.setEnabled(true); 
-        btAnterior.setEnabled(true); 
-        btProximo.setEnabled(true); 
-        btExcluir.setEnabled(false); 
-            
-    } 
-    
-    public void adicionarCaixa(){  
-        int regInseridos = 0; 
-        
-        regInseridos = ManterCaixas.adcionarCaixa(areDescricao.getText()); 
-        
-        System.out.println ("Número de registros inseridos: " +regInseridos); 
-        if(regInseridos == 1){ 
-            JOptionPane.showMessageDialog(this, "Informações do Caixa adicionada com sucesso",
-                    "Mensagem de confirmação", JOptionPane.INFORMATION_MESSAGE);
-        
-        }
-    }
-
+       
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -137,10 +109,25 @@ public class FormCaixa extends javax.swing.JInternalFrame {
         });
 
         btSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sistgas/icones/salvar.gif"))); // NOI18N
+        btSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSalvarActionPerformed(evt);
+            }
+        });
 
         btExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sistgas/icones/excluir.gif"))); // NOI18N
+        btExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btExcluirActionPerformed(evt);
+            }
+        });
 
         btProximo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/sistgas/icones/proximo.gif"))); // NOI18N
+        btProximo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btProximoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -219,26 +206,128 @@ public class FormCaixa extends javax.swing.JInternalFrame {
 
     private void tfIdCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfIdCaixaActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_tfIdCaixaActionPerformed
 
     private void btAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAnteriorActionPerformed
-        // TODO add your handling code here:
+        try {
+            if (rs != null) {
+                if (!rs.isFirst()) {
+                    rs.previous();
+                }
+                exibirCaixa(rs);
+
+                btAdicionar.setEnabled(false);
+                btSalvar.setEnabled(true);
+                btAnterior.setEnabled(true);
+                btProximo.setEnabled(true);
+                btExcluir.setEnabled(true);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }        
     }//GEN-LAST:event_btAnteriorActionPerformed
-
+    
+    public void limparFormulario() { 
+        
+        tfIdCaixa.setText(""); 
+        taDescricao.setText("");        
+            
+        btSalvar.setEnabled(false); 
+        btAdicionar.setEnabled(true); 
+        btAnterior.setEnabled(true); 
+        btProximo.setEnabled(true); 
+        btExcluir.setEnabled(false); 
+            
+    } 
+    
     private void btNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNovoActionPerformed
-        // TODO add your handling code here: 
-        limparFormulario();
+        
+        limparFormulario();        
     }//GEN-LAST:event_btNovoActionPerformed
-
+    
+    public void adicionarCaixa(){  
+        int regInseridos = 0; 
+        
+        regInseridos = ManterCaixas.adicionarCaixa(taDescricao.getText()); 
+        
+        System.out.println ("Número de registros inseridos: " +regInseridos); 
+        if(regInseridos == 1){ 
+            JOptionPane.showMessageDialog(this, "Informações do Caixa adicionada com sucesso",
+                    "Mensagem de confirmação", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+    
     private void btAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAdicionarActionPerformed
-        // TODO add your handling code here: 
+         
         adicionarCaixa(); 
         listarCaixas();
     }//GEN-LAST:event_btAdicionarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void btProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btProximoActionPerformed
+        try {
+            if (rs != null) {
+                if (!rs.isLast()) {
+                    rs.next();
+                }
+                exibirCaixa(rs);
+
+                btAdicionar.setEnabled(false);
+                btSalvar.setEnabled(true);
+                btAnterior.setEnabled(true);
+                btProximo.setEnabled(true);
+                btExcluir.setEnabled(true);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_btProximoActionPerformed
+
+    private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
+        // TODO add your handling code here:
+        try {
+            int codigo = rs.getRow();
+            atualizarCaixa();
+            listarCaixas();
+            rs.absolute(codigo);
+            exibirCaixa(rs);
+
+            btAdicionar.setEnabled(false);
+            btSalvar.setEnabled(true);
+            btAnterior.setEnabled(true);
+            btProximo.setEnabled(true);
+            btExcluir.setEnabled(true);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+    }//GEN-LAST:event_btSalvarActionPerformed
+    
+    private void atualizarCaixa() {
+        int regAtualizados = 0;
+
+        regAtualizados = ManterCaixas.atualizarCaixa(tfIdCaixa.getText(),
+                taDescricao.getText());
+
+        System.out.println("Número de registros atualizados: "+regAtualizados);
+        if(regAtualizados == 1){
+            JOptionPane.showMessageDialog(this, "Informações do Caixa salvas com sucesso.", "Mensagem de confirmação", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+    
+    private void excluirCaixa(){
+        int regExcluidos = 0;
+        
+        System.out.println("Número de registros deletados: "+regExcluidos);
+        if(regExcluidos == 1){
+            JOptionPane.showMessageDialog(this, "Informações do Caixa excluídas com sucesso.", "Mensagem de confirmação", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+    private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
+        excluirCaixa();
+        listarCaixas();
+    }//GEN-LAST:event_btExcluirActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
