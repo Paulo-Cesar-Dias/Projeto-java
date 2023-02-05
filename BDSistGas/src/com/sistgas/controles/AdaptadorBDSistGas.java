@@ -12,7 +12,11 @@ public class AdaptadorBDSistGas {
     // usuário do banco de dados
     private static String username = "root";
     // senha para acesso ao banco de dados
+<<<<<<< HEAD
     private static String password = "123456";
+=======
+    private static String password = "senhafacio123";
+>>>>>>> bd9a9d3acc4e7af5412db707c0ea943059b08a71
     // Conexão ao banco de dados
     private static Connection cnn = null;
     // Driver para conexão ao banco de dados

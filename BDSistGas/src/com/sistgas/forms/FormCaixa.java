@@ -70,7 +70,6 @@ public class FormCaixa extends javax.swing.JInternalFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        tfIdCaixa.setEditable(false);
         tfIdCaixa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfIdCaixaActionPerformed(evt);
@@ -244,7 +243,7 @@ public class FormCaixa extends javax.swing.JInternalFrame {
     } 
     
     private void btNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNovoActionPerformed
-        
+        adicionarCaixa();
         limparFormulario();        
     }//GEN-LAST:event_btNovoActionPerformed
     

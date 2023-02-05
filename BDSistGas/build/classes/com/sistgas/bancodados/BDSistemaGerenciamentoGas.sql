@@ -44,20 +44,25 @@ CREATE TABLE IF NOT EXISTS `BDSistemaGerenciamentoGas`.`clientes` (
 -- Table `BDSistemaGerenciamentoGas`.`caixa`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `BDSistemaGerenciamentoGas`.`caixa` (
-  `id` INT NOT NULL,
-  `data_abertura` DATE NOT NULL,
-  `data_fechamento` DATE NOT NULL,
-  `valor_abertura` DOUBLE NOT NULL,
-  `valor_fechamento` DOUBLE NOT NULL,
-  `situacao` VARCHAR(10) NOT NULL,
-  `diferenca` VARCHAR(45) NOT NULL,
-  `fkFuncionarios_cpf` INT NOT NULL,
+  `id` INT auto_increment,
+  `descricao` varchar(45),
+  `data_abertura` DATE ,
+  `data_fechamento` DATE ,
+  `valor_abertura` DOUBLE ,
+  `valor_fechamento` DOUBLE ,
+  `situacao` VARCHAR(10) ,
+  `diferenca` VARCHAR(45) ,
+  `fkFuncionarios_cpf` INT ,
   PRIMARY KEY (`id`),
     FOREIGN KEY (`fkFuncionarios_cpf`)
     REFERENCES `BDSistemaGerenciamentoGas`.`funcionarios` (`cpf`)
     );
+<<<<<<< HEAD
 
+=======
+>>>>>>> bd9a9d3acc4e7af5412db707c0ea943059b08a71
 
+select * from caixa;
 -- -----------------------------------------------------
 -- Table `BDSistemaGerenciamentoGas`.`pedidos`
 -- -----------------------------------------------------
