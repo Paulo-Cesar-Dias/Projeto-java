@@ -40,15 +40,13 @@ public class FormCaixa extends javax.swing.JInternalFrame {
     public void exibirCaixa (ResultSet rs) { 
         try { 
         
-        tfIdCaixa.setText(new Intenger(rs.getInt("id")).toString()); 
+        tfIdCaixa.setText(new Intenger(rs.getInt("idcaixa")).toString()); 
         taDescricao.setText(rs.getString("descricao"));
         
         }catch (SQLException e) { 
         e.printStackTrace();
     } 
     }  
-    
-    
     
        
     @SuppressWarnings("unchecked")
@@ -234,7 +232,7 @@ public class FormCaixa extends javax.swing.JInternalFrame {
         tfIdCaixa.setText(""); 
         taDescricao.setText("");        
             
-        btSalvar.setEnabled(true); 
+        btSalvar.setEnabled(false); 
         btAdicionar.setEnabled(true); 
         btAnterior.setEnabled(true); 
         btProximo.setEnabled(true); 

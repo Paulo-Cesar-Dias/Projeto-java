@@ -13,7 +13,7 @@ public class ManterCaixas {
     } 
     
     public static ResultSet getCaixa(String id) { 
-        String sql = "select * from caixa where id" + id + ";"; 
+        String sql = "select * from caixa where idcaixa=" + id + ";"; 
         ResultSet rs; 
         
         rs = AdaptadorBDSistGas.consultarBanco(sql) ;  
@@ -40,7 +40,7 @@ public class ManterCaixas {
         String updateSQL = "UPDATE caixa SET " + 
                 
                 "descricao ='" +descricao+ "'" +  
-                " where id = "+id+";";
+                " where idcaixa = "+id+";";
                 
         
         regAtualizados = AdaptadorBDSistGas.atualizarBanco(updateSQL) ;
@@ -53,7 +53,7 @@ public class ManterCaixas {
             int regExcluidos = 0; 
 
             String excluirSQL = "DELETE FROM caixa " + 
-                 " where id = "+id+";";
+                 " where idcaixa = "+id+";";
 
             regExcluidos = AdaptadorBDSistGas.atualizarBanco(excluirSQL) ;
 
