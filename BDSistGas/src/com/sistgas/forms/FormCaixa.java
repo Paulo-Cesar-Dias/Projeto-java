@@ -40,7 +40,7 @@ public class FormCaixa extends javax.swing.JInternalFrame {
     public void exibirCaixa (ResultSet rs) { 
         try { 
         
-        tfIdCaixa.setText(new Intenger(rs.getInt("idcaixa")).toString()); 
+        tfIdCaixa.setText(new Intenger(rs.getInt("id")).toString()); 
         taDescricao.setText(rs.getString("descricao"));
         
         }catch (SQLException e) { 
@@ -232,7 +232,7 @@ public class FormCaixa extends javax.swing.JInternalFrame {
         tfIdCaixa.setText(""); 
         taDescricao.setText("");        
             
-        btSalvar.setEnabled(false); 
+        btSalvar.setEnabled(true); 
         btAdicionar.setEnabled(true); 
         btAnterior.setEnabled(true); 
         btProximo.setEnabled(true); 
