@@ -57,6 +57,10 @@ CREATE TABLE IF NOT EXISTS `BDSistemaGerenciamentoGas`.`caixa` (
     FOREIGN KEY (`fkFuncionarios_cpf`)
     REFERENCES `BDSistemaGerenciamentoGas`.`funcionarios` (`cpf`)
     );
+<<<<<<< HEAD
+
+=======
+>>>>>>> bd9a9d3acc4e7af5412db707c0ea943059b08a71
 
 select * from caixa;
 -- -----------------------------------------------------
