@@ -48,15 +48,15 @@ public class ManterCaixas {
         return regAtualizados; 
     }  
      
-          public static int excluirCaixa(String id, String descricao) { 
+     public static int excluirCaixa(String id){ 
         
-            int regExcluidos = 0; 
+        int regExcluidos = 0; 
 
-            String excluirSQL = "DELETE FROM caixa " + 
-                 " where id= "+id+";";
+        String excluirSQL = "DELETE FROM caixa " + 
+        " where id= "+id+";";
 
-            regExcluidos = AdaptadorBDSistGas.atualizarBanco(excluirSQL) ;
+        regExcluidos = AdaptadorBDSistGas.atualizarBanco(excluirSQL) ;
 
-            return regExcluidos; 
-        }        
+        return regExcluidos; 
+        }       
 }
