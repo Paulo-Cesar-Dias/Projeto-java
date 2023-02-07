@@ -72,7 +72,7 @@ public class FormFuncionarios extends javax.swing.JInternalFrame {
     public void adicionarFuncionarios(){  
         int regInseridos = 0; 
         
-        regInseridos = ManterFuncionarios.adicionarFuncionarios(tfNome.getText(), tfContato.getText(), 
+        regInseridos = ManterFuncionarios.adicionarFuncionarios(tfCpf.getText(),tfNome.getText(), tfContato.getText(), 
                 tfEmail.getText(), tfEndereco.getText()); 
         
         System.out.println ("Número de registros inseridos: " +regInseridos); 

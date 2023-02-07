@@ -20,14 +20,15 @@ public class ManterFuncionarios{
         return rs;  
     } 
     
-    public static int adicionarFuncionarios(String nome, String contato, String email, String endereco) { 
+    public static int adicionarFuncionarios( String cpf, String nome, String contato, String email, String endereco) { 
         
         int regInseridos = 0; 
         
         String insertSQL = "INSERT INTO funcionarios " + 
-                "(nome, contato, email, endereco) VALUES ("+ 
-                "'" +nome+ "', " 
-                +contato+ ", " +
+                "(cpf, nome, contato, email, endereco) VALUES ("+
+                cpf+ ", " +
+                "'" +nome+ "', "+
+                "'"+contato+ "', " +
                 "'" +email+ "', "+
                 "'" +endereco+ "'"+
                 ");"; 
