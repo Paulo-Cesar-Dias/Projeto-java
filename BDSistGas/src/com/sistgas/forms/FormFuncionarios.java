@@ -97,8 +97,7 @@ public class FormFuncionarios extends javax.swing.JInternalFrame {
     private void excluirFuncionarios(){
         int regExcluidos = 0;
         
-        regExcluidos = ManterFuncionarios.atualizarFuncionarios(tfCpf.getText(),
-                tfNome.getText(), tfContato.getText(), tfEmail.getText(), tfEndereco.getText());
+        regExcluidos = ManterFuncionarios.excluirFuncionarios(tfCpf.getText());
         
         System.out.println("Número de registros deletados: "+regExcluidos);
         if(regExcluidos == 1){

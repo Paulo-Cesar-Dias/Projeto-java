@@ -55,16 +55,16 @@ public class ManterFuncionarios{
         return regAtualizados; 
     }  
      
-          public static int excluirFuncionarios(String cpf){ 
+     public static int excluirFuncionarios(String cpf){ 
         
-            int regExcluidos = 0; 
+        int regExcluidos = 0; 
 
-            String excluirSQL = "DELETE FROM funcionarios " + 
-                 " where cpf= "+cpf+";";
+        String excluirSQL = "DELETE FROM funcionarios " + 
+        " where cpf= "+cpf+";";
 
-            regExcluidos = AdaptadorBDSistGas.atualizarBanco(excluirSQL) ;
+        regExcluidos = AdaptadorBDSistGas.atualizarBanco(excluirSQL) ;
 
-            return regExcluidos; 
+        return regExcluidos; 
         }
     
 }
