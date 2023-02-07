@@ -12,54 +12,51 @@ public class ManterProdutos {
         return rs;   
     } 
     
-    public static ResultSet getProdutos(String cpf) { 
-        String sql = "select * from produtos where cpf=" +cpf+ ";"; 
+    public static ResultSet getProdutos(String id) { 
+        String sql = "select * from produtos where id=" +id+ ";"; 
         ResultSet rs; 
         
         rs = AdaptadorBDSistGas.consultarBanco(sql) ;  
         return rs;  
     } 
     
-    public static int adicionarProdutos(String nome, String contato, String email, String endereco) { 
+    public static int adicionarProdutos(String id, String nome, String descricao, String preco_unitario) { 
         
         int regInseridos = 0; 
         
         String insertSQL = "INSERT INTO produtos " + 
-                "(nome, contato, email, endereco) VALUES ("+ 
-                "'" +nome+ "', " 
-                +contato+ ", " +
-                "'" +email+ "', "+
-                "'" +endereco+ "'"+
+                "(id, nome, descricao, preco_unitario) VALUES ("+ 
+                id+", "+
+                "'"+nome+ "', "+ 
+                "'"+descricao+ "', " +
+                "'"+preco_unitario+"'"+ 
                 ");"; 
         
         regInseridos = AdaptadorBDSistGas.atualizarBanco(insertSQL) ;
         return regInseridos; 
     }  
     
-     public static int atualizarProdutos(String cpf, String nome, String contato, String email, String endereco) { 
+     public static int atualizarProdutos(String id, String nome, String descricao, String preco_unitario) { 
         
         int regAtualizados = 0; 
         
-        String updateSQL = "UPDATE funcionarios SET " + 
-                
+        String updateSQL = "UPDATE produtos SET " + 
                 "nome ='" +nome+ "', " +  
-                "contato =" +contato+ ", " +
-                "email ='" +email+ "', " +
-                "endereco ='" +endereco+ "'" +
-                " where cpf= "+cpf+";";
-                
-        
+                "descricao =" +descricao+ ", " +
+                "preco_unitario ='" +preco_unitario+ "'" +
+                " where id= "+id+";";
+
         regAtualizados = AdaptadorBDSistGas.atualizarBanco(updateSQL) ;
         
         return regAtualizados; 
     }  
      
-          public static int excluirProdutos(String cpf){ 
+          public static int excluirProdutos(String id){ 
         
             int regExcluidos = 0; 
 
             String excluirSQL = "DELETE FROM produtos " + 
-                 " where cpf= "+cpf+";";
+                 " where id= "+id+";";
 
             regExcluidos = AdaptadorBDSistGas.atualizarBanco(excluirSQL) ;
 

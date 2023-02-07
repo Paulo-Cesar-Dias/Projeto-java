@@ -1,7 +1,6 @@
 package com.sistgas.forms;
 
 import com.sistgas.controles.ManterClientes; 
-import com.sistgas.controles.ManterFuncionarios;
 import java.sql.ResultSet; 
 import java.sql.SQLException; 
 import javax.swing.JOptionPane;

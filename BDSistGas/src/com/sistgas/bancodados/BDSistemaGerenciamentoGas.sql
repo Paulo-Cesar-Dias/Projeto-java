@@ -89,10 +89,8 @@ CREATE TABLE IF NOT EXISTS `BDSistemaGerenciamentoGas`.`produtos` (
   `nome` VARCHAR(200) NOT NULL,
   `descricao` VARCHAR(500) NOT NULL,
   `preco_unitario` VARCHAR(45) NOT NULL,
-  `fkPedidos_id` INT NOT NULL,
-  PRIMARY KEY (`id`),
-    FOREIGN KEY (`fkPedidos_id`)
-    REFERENCES `BDSistemaGerenciamentoGas`.`pedidos` (`id`));
+  PRIMARY KEY (`id`)
+  );
 
 
 -- -----------------------------------------------------
