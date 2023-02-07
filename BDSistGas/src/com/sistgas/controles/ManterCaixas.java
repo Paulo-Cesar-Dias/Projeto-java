@@ -13,7 +13,7 @@ public class ManterCaixas {
     } 
     
     public static ResultSet getCaixa(String id) { 
-        String sql = "select * from caixa where id=" + id + ";"; 
+        String sql = "select * from caixa where id=" +id+ ";"; 
         ResultSet rs; 
         
         rs = AdaptadorBDSistGas.consultarBanco(sql) ;  
