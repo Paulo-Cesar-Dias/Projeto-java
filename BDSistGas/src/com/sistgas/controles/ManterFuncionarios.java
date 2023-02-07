@@ -26,9 +26,9 @@ public class ManterFuncionarios{
         
         String insertSQL = "INSERT INTO funcionarios " + 
                 "(nome, contato, email, endereco) VALUES ("+ 
-                "'" +nome+ "'" + 
-                "'" +contato+ "'"+
-                "'" +email+ "'"+
+                "'" +nome+ "', " 
+                +contato+ ", " +
+                "'" +email+ "', "+
                 "'" +endereco+ "'"+
                 ");"; 
         
@@ -40,11 +40,11 @@ public class ManterFuncionarios{
         
         int regAtualizados = 0; 
         
-        String updateSQL = "UPDATE caixa SET " + 
+        String updateSQL = "UPDATE funcionarios SET " + 
                 
-                "nome ='" +nome+ "'" +  
-                "contato ='" +contato+ "'" +
-                "email ='" +email+ "'" +
+                "nome ='" +nome+ "', " +  
+                "contato =" +contato+ ", " +
+                "email ='" +email+ "', " +
                 "endereco ='" +endereco+ "'" +
                 " where cpf= "+cpf+";";
                 
@@ -54,11 +54,11 @@ public class ManterFuncionarios{
         return regAtualizados; 
     }  
      
-          public static int excluirFuncionarios(String cpf, String nome, String contato, String email, String endereco){ 
+          public static int excluirFuncionarios(String cpf){ 
         
             int regExcluidos = 0; 
 
-            String excluirSQL = "DELETE FROM caixa " + 
+            String excluirSQL = "DELETE FROM funcionarios " + 
                  " where cpf= "+cpf+";";
 
             regExcluidos = AdaptadorBDSistGas.atualizarBanco(excluirSQL) ;
