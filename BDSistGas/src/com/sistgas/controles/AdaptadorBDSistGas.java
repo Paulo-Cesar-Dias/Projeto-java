@@ -1,9 +1,6 @@
-
-
 package com.sistgas.controles;
 
 import java.sql.*;
-
 
 public class AdaptadorBDSistGas {
 

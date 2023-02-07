@@ -1,9 +1,109 @@
 package com.sistgas.forms;
 
+import com.sistgas.controles.ManterFuncionarios; 
+import java.sql.ResultSet; 
+import java.sql.SQLException; 
+import javax.swing.JOptionPane;
+
 public class FormFuncionarios extends javax.swing.JInternalFrame {
+    
+    private ResultSet rs = null;
 
     public FormFuncionarios() {
+        
+        super("Formulário Funcionarios", true,true,true,true);
         initComponents();
+        listarFuncionarios();
+    }
+    
+    public void listarFuncionarios() { 
+        rs = ManterFuncionarios.listarFuncionarios();
+        try { 
+            if (rs != null && rs.next()) {
+            exibirFuncionarios(rs);    
+            
+            
+            btAdicionar.setEnabled(false); 
+            btSalvar.setEnabled(true); 
+            btAnterior.setEnabled(true); 
+            btProximo.setEnabled(true); 
+            btExcluir.setEnabled(true);
+                   
+        }else{ 
+            limparFormulario(); 
+            rs = null;
+            
+        }
+    }catch (SQLException e) { 
+        e.printStackTrace();
+    }
+    } 
+    
+    public void exibirFuncionarios(ResultSet rs) { 
+        try { 
+        
+        tfCpf.setText(new Integer(rs.getInt("cpf")).toString()); 
+        tfNome.setText(rs.getString("nome"));
+        tfContato.setText(rs.getString("contato"));
+        tfEmail.setText(rs.getString("email"));
+        tfEndereco.setText(rs.getString("endereco"));
+
+        }catch (SQLException e) { 
+        e.printStackTrace();
+    } 
+    }  
+    
+    public void limparFormulario() { 
+        
+        tfCpf.setText(""); 
+        tfNome.setText("");  
+        tfContato.setText("");
+        tfEmail.setText("");
+        tfEndereco.setText("");
+            
+        btSalvar.setEnabled(false); 
+        btAdicionar.setEnabled(true); 
+        btAnterior.setEnabled(true); 
+        btProximo.setEnabled(true); 
+        btExcluir.setEnabled(false); 
+            
+    }
+    
+    public void adicionarFuncionarios(){  
+        int regInseridos = 0; 
+        
+        regInseridos = ManterFuncionarios.adicionarFuncionarios(tfNome.getText(), tfContato.getText(), 
+                tfEmail.getText(), tfEndereco.getText()); 
+        
+        System.out.println ("Número de registros inseridos: " +regInseridos); 
+        if(regInseridos == 1){ 
+            JOptionPane.showMessageDialog(this, "Informações do Caixa adicionada com sucesso",
+                    "Mensagem de confirmação", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+    
+    private void atualizarFuncionarios() {
+        int regAtualizados = 0;
+
+        regAtualizados = ManterFuncionarios.atualizarFuncionarios(tfCpf.getText(),
+                tfNome.getText(), tfContato.getText(), tfEmail.getText(), tfEndereco.getText());
+
+        System.out.println("Número de registros atualizados: "+regAtualizados);
+        if(regAtualizados == 1){
+            JOptionPane.showMessageDialog(this, "Informações do Funcionario salvas com sucesso.", "Mensagem de confirmação", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+    
+    private void excluirFuncionarios(){
+        int regExcluidos = 0;
+        
+        regExcluidos = ManterFuncionarios.atualizarFuncionarios(tfCpf.getText(),
+                tfNome.getText(), tfContato.getText(), tfEmail.getText(), tfEndereco.getText());
+        
+        System.out.println("Número de registros deletados: "+regExcluidos);
+        if(regExcluidos == 1){
+            JOptionPane.showMessageDialog(this, "Informações do Caixa excluídas com sucesso.", "Mensagem de confirmação", JOptionPane.INFORMATION_MESSAGE);
+        }
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -226,7 +326,7 @@ public class FormFuncionarios extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_tfEnderecoActionPerformed
 
     private void tfEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfEmailActionPerformed
-        // TODO add your handling code here:
+    
     }//GEN-LAST:event_tfEmailActionPerformed
 
     private void btAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAnteriorActionPerformed
@@ -235,7 +335,7 @@ public class FormFuncionarios extends javax.swing.JInternalFrame {
                 if (!rs.isFirst()) {
                     rs.previous();
                 }
-                exibirCaixa(rs);
+                exibirFuncionarios(rs);
 
                 btAdicionar.setEnabled(false);
                 btSalvar.setEnabled(true);
@@ -249,24 +349,24 @@ public class FormFuncionarios extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btAnteriorActionPerformed
 
     private void btNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNovoActionPerformed
-        adicionarCaixa();
+
         limparFormulario();
     }//GEN-LAST:event_btNovoActionPerformed
 
     private void btAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAdicionarActionPerformed
 
-        adicionarCaixa();
-        listarCaixas();
+        adicionarFuncionarios();
+        listarFuncionarios();
     }//GEN-LAST:event_btAdicionarActionPerformed
 
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
         // TODO add your handling code here:
         try {
             int codigo = rs.getRow();
-            atualizarCaixa();
-            listarCaixas();
+            atualizarFuncionarios();
+            listarFuncionarios();
             rs.absolute(codigo);
-            exibirCaixa(rs);
+            exibirFuncionarios(rs);
 
             btAdicionar.setEnabled(false);
             btSalvar.setEnabled(true);
@@ -280,8 +380,8 @@ public class FormFuncionarios extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btSalvarActionPerformed
 
     private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
-        excluirCaixa();
-        listarCaixas();
+        excluirFuncionarios();
+        listarFuncionarios();
     }//GEN-LAST:event_btExcluirActionPerformed
 
     private void btProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btProximoActionPerformed
@@ -290,7 +390,7 @@ public class FormFuncionarios extends javax.swing.JInternalFrame {
                 if (!rs.isLast()) {
                     rs.next();
                 }
-                exibirCaixa(rs);
+                exibirFuncionarios(rs);
 
                 btAdicionar.setEnabled(false);
                 btSalvar.setEnabled(true);

@@ -40,7 +40,7 @@ public class FormCaixa extends javax.swing.JInternalFrame {
     public void exibirCaixa (ResultSet rs) { 
         try { 
         
-        tfIdCaixa.setText(new Intenger(rs.getInt("idcaixa")).toString()); 
+        tfIdCaixa.setText(new Integer(rs.getInt("idcaixa")).toString()); 
         taDescricao.setText(rs.getString("descricao"));
         
         }catch (SQLException e) { 
@@ -204,7 +204,6 @@ public class FormCaixa extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tfIdCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfIdCaixaActionPerformed
-        // TODO add your handling code here:
         
     }//GEN-LAST:event_tfIdCaixaActionPerformed
 
