@@ -1,12 +1,9 @@
-
 package com.sistgas.controles;
 
 import java.sql.ResultSet;
 
 public class ManterProdutos {
     
-} 
-
     public static ResultSet listarProdutos(){ 
         String sql= "select * from produtos;"; 
         ResultSet rs; 
@@ -69,5 +66,5 @@ public class ManterProdutos {
             return regExcluidos; 
         }
     
-}
+} 
 
