@@ -71,6 +71,11 @@ public class FormSistGas extends javax.swing.JFrame {
         editMenu.add(pasteMenuItem);
 
         jMenuItem2.setText("Cliente");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         editMenu.add(jMenuItem2);
 
         menuBar.add(editMenu);
@@ -127,6 +132,13 @@ public class FormSistGas extends javax.swing.JFrame {
         desktopPane.add(formFuncionarios, JLayeredPane.POPUP_LAYER);
         formFuncionarios.setVisible(true);
     }//GEN-LAST:event_copyMenuItemActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+
+        FormClientes formClientes = new FormClientes();
+        desktopPane.add(formClientes, JLayeredPane.POPUP_LAYER);
+        formClientes.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments

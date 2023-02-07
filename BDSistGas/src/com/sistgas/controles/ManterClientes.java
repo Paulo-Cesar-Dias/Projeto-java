@@ -42,8 +42,8 @@ public class ManterClientes {
         String updateSQL = "UPDATE clientes SET " + 
                 
                 "nome ='" +nome+ "', " +  
-                "telefone =" +telefone+ ", " +
-                "endereco ='" +endereco+ "'" +
+                "telefone ='"+telefone+"', " +
+                "endereco ='"+endereco+"'" +
                 " where id= "+id+";";
                 
         

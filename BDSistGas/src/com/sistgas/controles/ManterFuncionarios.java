@@ -20,7 +20,7 @@ public class ManterFuncionarios{
         return rs;  
     } 
     
-    public static int adicionarFuncionarios( String cpf, String nome, String contato, String email, String endereco) { 
+    public static int adicionarFuncionarios(String cpf, String nome, String contato, String email, String endereco) { 
         
         int regInseridos = 0; 
         

@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `BDSistemaGerenciamentoGas`.`funcionarios` (
 -- Table `BDSistemaGerenciamentoGas`.`clientes`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `BDSistemaGerenciamentoGas`.`clientes` (
-  `id` INT NOT NULL,
+  `id` INT AUTO_INCREMENT,
   `nome` VARCHAR(200) NOT NULL,
   `telefone` VARCHAR(13) NOT NULL,
   `endereco` TEXT NOT NULL,
