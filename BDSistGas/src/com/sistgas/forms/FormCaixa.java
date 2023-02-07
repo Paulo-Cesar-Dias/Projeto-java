@@ -40,7 +40,7 @@ public class FormCaixa extends javax.swing.JInternalFrame {
     public void exibirCaixa (ResultSet rs) { 
         try { 
         
-        tfIdCaixa.setText(new Integer(rs.getInt("idcaixa")).toString()); 
+        tfIdCaixa.setText(new Integer(rs.getInt("id")).toString()); 
         taDescricao.setText(rs.getString("descricao"));
         
         }catch (SQLException e) { 
@@ -68,6 +68,7 @@ public class FormCaixa extends javax.swing.JInternalFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        tfIdCaixa.setEditable(false);
         tfIdCaixa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfIdCaixaActionPerformed(evt);
@@ -315,7 +316,7 @@ public class FormCaixa extends javax.swing.JInternalFrame {
     
     private void excluirCaixa(){
         int regExcluidos = 0;
-        
+        regExcluidos=ManterCaixas.excluirCaixa(tfIdCaixa.getText());
         System.out.println("Número de registros deletados: "+regExcluidos);
         if(regExcluidos == 1){
             JOptionPane.showMessageDialog(this, "Informações do Caixa excluídas com sucesso.", "Mensagem de confirmação", JOptionPane.INFORMATION_MESSAGE);
@@ -373,9 +374,5 @@ public class FormCaixa extends javax.swing.JInternalFrame {
     private javax.swing.JTextField tfIdCaixa;
     // End of variables declaration//GEN-END:variables
 
-    private static class Intenger {
 
-        public Intenger(int aInt) {
-        }
-    }
 }
