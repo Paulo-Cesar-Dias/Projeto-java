@@ -19,7 +19,6 @@ public class FormSistGas extends javax.swing.JFrame {
         fileMenu = new javax.swing.JMenu();
         exitMenuItem = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
-        cutMenuItem = new javax.swing.JMenuItem();
         copyMenuItem = new javax.swing.JMenuItem();
         pasteMenuItem = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -47,15 +46,6 @@ public class FormSistGas extends javax.swing.JFrame {
 
         editMenu.setMnemonic('e');
         editMenu.setText("Cadastro");
-
-        cutMenuItem.setMnemonic('t');
-        cutMenuItem.setText("Caixa");
-        cutMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cutMenuItemActionPerformed(evt);
-            }
-        });
-        editMenu.add(cutMenuItem);
 
         copyMenuItem.setMnemonic('y');
         copyMenuItem.setText("Funcionario");
@@ -90,6 +80,11 @@ public class FormSistGas extends javax.swing.JFrame {
 
         contentMenuItem.setMnemonic('c');
         contentMenuItem.setText("Abrir Caixa");
+        contentMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contentMenuItemActionPerformed(evt);
+            }
+        });
         helpMenu.add(contentMenuItem);
 
         aboutMenuItem.setMnemonic('a');
@@ -125,19 +120,6 @@ public class FormSistGas extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
-    private void cutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cutMenuItemActionPerformed
-
-        FormCaixa formCaixa = new FormCaixa();
-        desktopPane.add(formCaixa, JLayeredPane.POPUP_LAYER);
-        formCaixa.setVisible(true);        
-    }//GEN-LAST:event_cutMenuItemActionPerformed
-
-    private void copyMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyMenuItemActionPerformed
-        FormFuncionarios formFuncionarios = new FormFuncionarios();
-        desktopPane.add(formFuncionarios, JLayeredPane.POPUP_LAYER);
-        formFuncionarios.setVisible(true);
-    }//GEN-LAST:event_copyMenuItemActionPerformed
-
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
 
         FormClientes formClientes = new FormClientes();
@@ -146,12 +128,24 @@ public class FormSistGas extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void pasteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pasteMenuItemActionPerformed
-       
+
         FormProdutos formProdutos = new FormProdutos();
         desktopPane.add(formProdutos, JLayeredPane.POPUP_LAYER);
         formProdutos.setVisible(true);
-        
+
     }//GEN-LAST:event_pasteMenuItemActionPerformed
+
+    private void copyMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyMenuItemActionPerformed
+        FormFuncionarios formFuncionarios = new FormFuncionarios();
+        desktopPane.add(formFuncionarios, JLayeredPane.POPUP_LAYER);
+        formFuncionarios.setVisible(true);
+    }//GEN-LAST:event_copyMenuItemActionPerformed
+
+    private void contentMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contentMenuItemActionPerformed
+        FormAbrirCaixa formAbrirCaixa = new FormAbrirCaixa();
+        desktopPane.add(formAbrirCaixa, JLayeredPane.POPUP_LAYER);
+        formAbrirCaixa.setVisible(true);
+    }//GEN-LAST:event_contentMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,7 +186,6 @@ public class FormSistGas extends javax.swing.JFrame {
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem contentMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
-    private javax.swing.JMenuItem cutMenuItem;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu editMenu;
     private javax.swing.JMenuItem exitMenuItem;
