@@ -2,7 +2,7 @@ package com.sistgas.forms;
 
 import com.sistgas.controles.FuncoesUteis;
 import com.sistgas.controles.ManterFuncionarios;
-import com.sistgas.controles.ManterAbriFecharCaixa;
+import com.sistgas.controles.ManterAbrirFecharCaixa;
 import java.sql.Date;
 import java.sql.ResultSet; 
 import java.sql.SQLException; 
@@ -105,7 +105,7 @@ public class FormAbrirCaixa extends javax.swing.JInternalFrame {
         String fData = new SimpleDateFormat("yyyy-MM-dd").format(data);
         String fHora = new SimpleDateFormat("HH:mm").format(data);
 
-        regInseridos = ManterAbrirFecharCaixa.adicionarAbrirCaixa(tfCpf_Funcionario.getText(),
+        regInseridos = ManterAbrirFecharCaixa.adicionarAbrirCaixa(tfCpf_Funcionario.getText(),tfData_Abertura.getText(),
                 new Double(tfValor_Abertura.getText()).toString(), "Aberto");
 
         System.out.println("Número de registros inseridos: " + regInseridos);

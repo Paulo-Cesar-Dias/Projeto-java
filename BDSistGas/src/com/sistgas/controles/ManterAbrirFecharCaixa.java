@@ -2,7 +2,7 @@ package com.sistgas.controles;
 
 import java.sql.ResultSet;
 
-public class ManterAbriFecharCaixa {  
+public class ManterAbrirFecharCaixa {  
     
     public static ResultSet listarAbrirFecharCaixa(){
         String sql = "select * from caixa;";
@@ -60,7 +60,5 @@ public class ManterAbriFecharCaixa {
         return regAtualizados;
 
     }
-    
-    
-    
+ 
 }
