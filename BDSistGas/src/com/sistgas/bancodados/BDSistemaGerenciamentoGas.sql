@@ -44,15 +44,14 @@ CREATE TABLE IF NOT EXISTS `BDSistemaGerenciamentoGas`.`clientes` (
 -- Table `BDSistemaGerenciamentoGas`.`caixa`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `BDSistemaGerenciamentoGas`.`caixa` (
-  `id` INT auto_increment,
-  `descricao` varchar(45),
-  `data_abertura` DATE ,
+  `id` INT AUTO_INCREMENT NOT NULL,
+  `data_abertura` DATE NOT NULL,
   `data_fechamento` DATE ,
-  `valor_abertura` DOUBLE ,
+  `valor_abertura` DOUBLE NOT NULL,
   `valor_fechamento` DOUBLE ,
   `situacao` VARCHAR(10) ,
   `diferenca` VARCHAR(45) ,
-  `fkFuncionarios_cpf` INT ,
+  `fkFuncionarios_cpf` INT NOT NULL,
   PRIMARY KEY (`id`),
     FOREIGN KEY (`fkFuncionarios_cpf`)
     REFERENCES `BDSistemaGerenciamentoGas`.`funcionarios` (`cpf`)
