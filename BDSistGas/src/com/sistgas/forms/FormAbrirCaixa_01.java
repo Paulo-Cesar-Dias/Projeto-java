@@ -136,17 +136,29 @@ public class FormAbrirCaixa_01 extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Situação:");
 
+        tfIdCaixa.setEditable(false);
+
+        tfNomeFuncionario.setEditable(false);
+
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setText("Data abertura:");
 
+        tfDataAbertura.setEditable(false);
+
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel5.setText("Data fechamento:");
+
+        tfDataFechamento.setEditable(false);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel6.setText("Valor abertura:");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel7.setText("Valor fechamento:");
+
+        tfValorFechamento.setEditable(false);
+
+        tfSituacao.setEditable(false);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
