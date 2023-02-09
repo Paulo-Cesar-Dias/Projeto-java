@@ -58,7 +58,5 @@ public class ManterAbrirFecharCaixa {
         regAtualizados = AdaptadorBDSistGas.atualizarBanco(updateSQL);
 
         return regAtualizados;
-
     }
- 
 }

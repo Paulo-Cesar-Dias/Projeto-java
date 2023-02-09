@@ -142,9 +142,9 @@ public class FormSistGas extends javax.swing.JFrame {
     }//GEN-LAST:event_copyMenuItemActionPerformed
 
     private void contentMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contentMenuItemActionPerformed
-        FormAbrirCaixa formAbrirCaixa = new FormAbrirCaixa();
-        desktopPane.add(formAbrirCaixa, JLayeredPane.POPUP_LAYER);
-        formAbrirCaixa.setVisible(true);
+        FormAbrirCaixa_01 formAbrirCaixa_01 = new FormAbrirCaixa_01();
+        desktopPane.add(formAbrirCaixa_01, JLayeredPane.POPUP_LAYER);
+        formAbrirCaixa_01.setVisible(true);
     }//GEN-LAST:event_contentMenuItemActionPerformed
 
     /**
