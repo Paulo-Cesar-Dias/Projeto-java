@@ -15,8 +15,9 @@ public class FormAbrirCaixa extends javax.swing.JInternalFrame {
 
     public FormAbrirCaixa() {
         super("Formulário Abrir Caixas", true,true,true,true);
-        initComponents();
         listarAbrirCaixa();
+        initComponents();
+        
     }
     
     public void listarAbrirCaixa() {
@@ -438,4 +439,8 @@ public class FormAbrirCaixa extends javax.swing.JInternalFrame {
     private javax.swing.JTextField tfValor_Abertura;
     private javax.swing.JTextField tfValor_Fechamento;
     // End of variables declaration//GEN-END:variables
+
+    private void initComponents() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
