@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `BDSistemaGerenciamentoGas`.`caixa` (
     REFERENCES `BDSistemaGerenciamentoGas`.`funcionarios` (`cpf`)
     );
 
-select * from caixa;
+select * from funcionarios;
 -- -----------------------------------------------------
 -- Table `BDSistemaGerenciamentoGas`.`pedidos`
 -- -----------------------------------------------------
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `BDSistemaGerenciamentoGas`.`pedidos` (
 -- Table `BDSistemaGerenciamentoGas`.`produtos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `BDSistemaGerenciamentoGas`.`produtos` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL auto_increment,
   `nome` VARCHAR(200) NOT NULL,
   `descricao` VARCHAR(500) NOT NULL,
   `preco_unitario` VARCHAR(45) NOT NULL,

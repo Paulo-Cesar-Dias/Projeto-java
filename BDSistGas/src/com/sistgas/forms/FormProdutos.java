@@ -69,7 +69,7 @@ public class FormProdutos extends javax.swing.JInternalFrame {
     public void adicionarProdutos(){  
         int regInseridos = 0; 
         
-        regInseridos = ManterProdutos.adicionarProdutos(tfIdProduto.getText(), tfNome.getText(), taDescricao.getText(), tfPreco_unitario.getText()); 
+        regInseridos = ManterProdutos.adicionarProdutos( tfNome.getText(), taDescricao.getText(), tfPreco_unitario.getText()); 
         
         System.out.println ("Número de registros inseridos: " +regInseridos); 
         if(regInseridos == 1){ 

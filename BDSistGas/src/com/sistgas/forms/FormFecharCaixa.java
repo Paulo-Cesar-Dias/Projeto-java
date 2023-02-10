@@ -27,7 +27,7 @@ public class FormFecharCaixa extends javax.swing.JInternalFrame {
             if (rs != null && rs.next()) {
                 exibirAbrirCaixa(rs);
 
-                btSalvar.setEnabled(false);
+                btSalvar.setEnabled(true);
                 btAnterior.setEnabled(true);
                 btProximo.setEnabled(true);
             } else {
@@ -85,18 +85,9 @@ public class FormFecharCaixa extends javax.swing.JInternalFrame {
     }
     
     public void limparFormulario() {
-        tfCpf.setEditable(true);
-        tfValorAbertura.setEditable(true);
-
-        tfIdCaixa.setText("");
-        tfCpf.setText("");
-        tfNomeFuncionario.setText("");
-        tfDataAbertura.setText("");
         tfDataFechamento.setText("");
-        tfValorAbertura.setText("");
         tfValorFechamento.setText("");
-        tfSituacao.setText("");
-        
+        tfSituacao.setText("Aberto");
     }
 
     @SuppressWarnings("unchecked")
@@ -354,6 +345,7 @@ public class FormFecharCaixa extends javax.swing.JInternalFrame {
         adicionarAbrirCaixa();
         listarAbrirCaixa();
         limparFormulario();
+        exibirAbrirCaixa(rs);
     }//GEN-LAST:event_btSalvarActionPerformed
 
     private void btProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btProximoActionPerformed

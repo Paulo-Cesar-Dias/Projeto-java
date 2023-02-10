@@ -20,13 +20,12 @@ public class ManterProdutos {
         return rs;  
     } 
     
-    public static int adicionarProdutos(String id, String nome, String descricao, String preco_unitario) { 
+    public static int adicionarProdutos( String nome, String descricao, String preco_unitario) { 
         
         int regInseridos = 0; 
         
         String insertSQL = "INSERT INTO produtos " + 
-                "(id, nome, descricao, preco_unitario) VALUES ("+ 
-                id+", "+
+                "( nome, descricao, preco_unitario) VALUES ("+ 
                 "'"+nome+ "', "+ 
                 "'"+descricao+ "', " +
                 "'"+preco_unitario+"'"+ 
@@ -42,7 +41,7 @@ public class ManterProdutos {
         
         String updateSQL = "UPDATE produtos SET " + 
                 "nome ='" +nome+ "', " +  
-                "descricao =" +descricao+ ", " +
+                "descricao ='" +descricao+ "', " +
                 "preco_unitario ='" +preco_unitario+ "'" +
                 " where id= "+id+";";
 

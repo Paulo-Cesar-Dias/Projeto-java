@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `BDSistemaGerenciamentoGas`.`caixa` (
     REFERENCES `BDSistemaGerenciamentoGas`.`funcionarios` (`cpf`)
     );
 
-select * from funcionarios;
+select * from caixa;
 -- -----------------------------------------------------
 -- Table `BDSistemaGerenciamentoGas`.`pedidos`
 -- -----------------------------------------------------
