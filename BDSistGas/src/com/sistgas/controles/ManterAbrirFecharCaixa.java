@@ -14,8 +14,8 @@ public class ManterAbrirFecharCaixa {
     }
     
     public static ResultSet getFuncionarioCaixa(String id){
-        String sql = "select * from caixa as c, funcionario as f "
-                + "where f.cpf = c.fkFuncionario_cpf and "
+        String sql = "select * from caixa as c, funcionarios as f "
+                + "where f.cpf = c.fkFuncionarios_cpf and "
                 + "c.id="+id+";";
         ResultSet rs;
 
@@ -30,7 +30,7 @@ public class ManterAbrirFecharCaixa {
 
         // Consulta a ser executada no banco de dados através de um método da classe Statement
         String insertSQL = "INSERT INTO caixa " +
-                "(fkFuncionario_cpf, data_abertura, valor_abertura, situacao) VALUES ("+
+                "(fkFuncionarios_cpf, data_abertura, valor_abertura, situacao) VALUES ("+
                 cpf+", "+ 
                 "'"+data_abertura+"'"+ ","+
                 valor_abertura+","+

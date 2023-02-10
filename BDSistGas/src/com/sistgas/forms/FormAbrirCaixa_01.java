@@ -47,9 +47,9 @@ public class FormAbrirCaixa_01 extends javax.swing.JInternalFrame {
             tfValorAbertura.setEditable(false);
 
             tfIdCaixa.setText(new Integer(rs.getInt("id")).toString());
-            tfCpf.setText(rs.getString("fkFuncionario_cpf"));
+            tfCpf.setText(rs.getString("fkFuncionarios_cpf"));
 
-            rs1 = ManterFuncionarios.getFuncionarios(rs.getString("fkFuncionario_cpf"));
+            rs1 = ManterFuncionarios.getFuncionarios(rs.getString("fkFuncionarios_cpf"));
             if (rs1 != null && rs1.next()) {
                 tfNomeFuncionario.setText(rs1.getString("nome"));
             }
@@ -343,15 +343,16 @@ public class FormAbrirCaixa_01 extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btAnteriorActionPerformed
 
     private void btNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNovoActionPerformed
-        // TODO add your handling code here:
+        
         limparFormulario();
         btAdicionar.setEnabled(true);
     }//GEN-LAST:event_btNovoActionPerformed
 
     private void btAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAdicionarActionPerformed
-        // TODO add your handling code here:
+
         adicionarAbrirCaixa();
         listarAbrirCaixa();
+        limparFormulario();
     }//GEN-LAST:event_btAdicionarActionPerformed
 
     private void btProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btProximoActionPerformed
