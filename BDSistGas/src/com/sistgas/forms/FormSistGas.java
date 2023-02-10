@@ -89,6 +89,11 @@ public class FormSistGas extends javax.swing.JFrame {
 
         aboutMenuItem.setMnemonic('a');
         aboutMenuItem.setText("Fechar Caixa");
+        aboutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aboutMenuItemActionPerformed(evt);
+            }
+        });
         helpMenu.add(aboutMenuItem);
 
         menuBar.add(helpMenu);
@@ -146,6 +151,13 @@ public class FormSistGas extends javax.swing.JFrame {
         desktopPane.add(formAbrirCaixa_01, JLayeredPane.POPUP_LAYER);
         formAbrirCaixa_01.setVisible(true);
     }//GEN-LAST:event_contentMenuItemActionPerformed
+
+    private void aboutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMenuItemActionPerformed
+        // TODO add your handling code here:
+        FormFecharCaixa formFecharCaixa = new FormFecharCaixa();
+        desktopPane.add(formFecharCaixa, JLayeredPane.POPUP_LAYER);
+        formFecharCaixa.setVisible(true);
+    }//GEN-LAST:event_aboutMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
